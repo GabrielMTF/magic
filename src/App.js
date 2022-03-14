@@ -27,6 +27,7 @@ const App = () => {
           <div>
             <p>{cards.name}</p>
             <img src={cards.image_uris.normal}/>
+            <p>Data da execução: 14/03/2022</p>
           </div>
         )}
       </div>
