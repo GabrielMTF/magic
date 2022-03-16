@@ -7,13 +7,6 @@ const CardArea = (props) => {
 
     const [color, setColor] = useState('green')
 
-    const ChangeColor = () => {
-        resultado.map((legals) => {
-            if (legals.legalities.alchemy === 'not_legal')
-            setColor('red')
-        })
-    }
-
     return (
         <div>
             {resultado.map((cards) =>
