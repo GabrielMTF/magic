@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import BasicInput from '../components/input';
 import BasicButton from '../components/button';
-import { Container, ContainerCards } from './styles';
+import CardArea from '../components/cardarea';
+import { Container } from './styles';
 import api from '../services/api';
 
 const App = () => {
@@ -22,19 +23,14 @@ const App = () => {
   }
 
   return (
+    <div>
     <Container >
       <BasicInput setSearch={setSearch} />
       <BasicButton Pesquisar={Pesquisar} />
-      <div>
-        {resultado.map((cards) =>
-          <ContainerCards>
-            <p>{cards.name}</p>
-            <img src={cards.image_uris.normal} />
-            
-          </ContainerCards>
-        )}
-      </div>
     </Container>
+    <CardArea resultado={resultado} />
+    
+    </div>
   )
 }
 
