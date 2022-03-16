@@ -14,7 +14,7 @@ const App = () => {
     api.get(`/cards/search?as=grid&order=name&q=${search}`)
       .then(response => {
         setResultado(response.data.data)
-        console.log(resultado);
+        console.log(response.data.data);
       })
   }
 

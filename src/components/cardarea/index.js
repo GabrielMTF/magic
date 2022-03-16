@@ -11,12 +11,12 @@ const CardArea = (props) => {
         <div>
             {resultado.map((cards) =>
                 <ContainerCards>
-                    <img src={cards.image_uris.normal} />
+                    <img src={cards.image_uris === undefined ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2POqzAmUCPqhHLYfN_i4qbBZ9QKFbKZMCWjDMT1kFFPXPAGGBn1Otgbcz--VLqQUxNHY&usqp=CAU' : cards.image_uris.normal}/>
                     <div style={{ marginLeft: '20px' }}>
                         <h1>{cards.name}{ }</h1>
                         <p>{cards.type_line}</p>
                         <p>{cards.oracle_text}</p>
-                        <p>{cards.loyalty != 0 ? 'Loyalty: ' + cards.loyalty : ''}</p>
+                        <p>{cards.loyalty != undefined ? 'Loyalty: ' + cards.loyalty : ''}</p>
                         <p>{'Illustrated by ' + cards.artist}</p>
                         <DivLegal >
                             <div style={{ display: 'block', flexDirection: 'column', paddingRight: '100px' }}>
@@ -35,11 +35,11 @@ const CardArea = (props) => {
                             <p style={{ border: `2px solid ${color}`, borderRadius: '5px' }}>{cards.legalities.vintage === 'not_legal' ? 'Vintage: NOT LEGAL' : cards.legalities.vintage === 'banned' ? 'Vintage: BANNED' : cards.legalities.vintage === 'restricted' ? 'Vintage: RESTRICTED' : 'Vintage: LEGAL'}</p>
                             </div>
                         </DivLegal>
-
+                        
 
                     </div>
 
-                </ContainerCards>
+                </ContainerCards> //card-face em cardas double face
             )
             }
         </div >

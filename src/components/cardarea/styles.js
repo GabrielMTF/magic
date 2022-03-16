@@ -5,6 +5,7 @@ export const ContainerCards = styled.div`
     display:flex ;
     height:550px;
     margin-top:220px ;
+    border-radius: 10px;
     
 `
 
