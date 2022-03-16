@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import api from './api';
+import BasicInput from '../components/input';
+import BasicButton from '../components/button';
+import { Container, ContainerCards } from './styles';
+import api from '../services/api';
 
 const App = () => {
 
@@ -19,19 +22,19 @@ const App = () => {
   }
 
   return (
-    <div>
-      <input type='text' placeholder='card name' onChange={e => setSearch(e.target.value)} />
-      <button onClick={Pesquisar} >Pesquisar</button>
+    <Container >
+      <BasicInput setSearch={setSearch} />
+      <BasicButton Pesquisar={Pesquisar} />
       <div>
         {resultado.map((cards) =>
-          <div>
+          <ContainerCards>
             <p>{cards.name}</p>
-            <img src={cards.image_uris.normal}/>
-            <p>Data da execução: 14/03/2022</p>
-          </div>
+            <img src={cards.image_uris.normal} />
+            
+          </ContainerCards>
         )}
       </div>
-    </div>
+    </Container>
   )
 }
 
